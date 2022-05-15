@@ -23,7 +23,7 @@ which and be launched in **docker-compose** folder.
   cd ..
   go run main.go "SELECT * FROM users"
   ```
-    result will be:
+result will be:
   ```
   id                                   name   age married location                                             phone_numbers       creation_time
 4572589b-6295-4880-b1b0-c45849524193 Nathan 25  true    {"city": "Salt Lake City", "state": "UT"}            {987-6666}          2022-05-15T14:27:22.956924Z
@@ -35,7 +35,7 @@ ec9c6e0b-5598-45b0-a0e6-819ffcb44036 Mary       false   {"city": "Phoenix", "sta
   go run main.go \
   "SELECT name, location->>'city' AS \"CITY\" FROM users"
   ```
-    result will be:
+result will be:
   ```
   name   CITY
 Nathan Salt Lake City
