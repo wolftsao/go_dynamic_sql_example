@@ -9,6 +9,8 @@ import (
 	"text/tabwriter"
 
 	_ "github.com/lib/pq"
+	// for pgx, need to use it's standard library compatibility driver:
+	// _ "github.com/jackc/pgx/v4/stdlib"
 )
 
 func main() {
@@ -19,6 +21,7 @@ func main() {
 	}
 	stmt := os.Args[1]
 
+	// change driveName to pgx if using pgx
 	db, err := sql.Open("postgres", "postgres://root@127.0.0.1:26257/defaultdb?sslmode=disable")
 	if err != nil {
 		log.Fatalln(err)
